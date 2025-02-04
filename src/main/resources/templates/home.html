@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>HOME</title>
+</head>
+<body>
+
+<!-- nav.html을 동적으로 포함 -->
+<div th:replace="~{nav.html}"></div>
+
+<!-- main home content -->
+<div class="nav">
+    <div class="logo"><a href="#">CLUBFLOW</a></div>
+    <img src="../static/image/menu.png" alt="menu" class="menu-toggle">
+</div>
+
+<div class="intro">
+    <img src="../static/image/pin.png" alt="pin" class="intro-pin">
+    <div class="intro-msg">
+        <p><span style="font-weight: bolder; color: black; font-size: 2.8rem;">OOO</span>님,<br> 오늘도 반갑습니다!</p>
+    </div>
+    <div class="check"> <!-- 출석 체크 -->
+        <button class="check-attendance">출석체크</button> <!-- 깜빡깜빡 -->
+        <button style="display:none;">출석 완료</button>
+    </div>
+</div>
+
+<div class="schedule"> <!-- 일정 -->
+    <div class="title-schedule">
+        <p>오늘의 스터디</p>
+        <p>1<span style="color: gray;"> / 3</span></p>
+    </div>
+
+    <div class="schedule-list">
+        <div class="todo">
+            <img src="../static/image/color.png" alt="pin" class="schedule-pin">
+            <p>정렬 알고리즘 뿌시기</p>
+        </div>
+        <div class="todo">
+            <img src="../static/image/color.png" alt="pin" class="schedule-pin">
+            <p>블로그 만들기</p>
+        </div>
+        <div class="todo">
+            <img src="../static/image/color.png" alt="pin" class="schedule-pin">
+            <p>게시판 CRUD</p>
+        </div>
+    </div>
+</div>
+
+<div class="board"> <!-- 게시판 -->
+    <div class="title-board">
+        <p>게시판 목록</p>
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+            </svg>
+        </p>
+    </div>
+
+    <div class="board-list">
+        <div class="list">
+            <img src="../static/image/color.png" alt="pin" class="schedule-pin">
+            <p>게시판은 인스타랑 함께 기록용으로 사용됩니다</p>
+        </div>
+        <div class="list">
+            <img src="../static/image/color.png" alt="pin" class="schedule-pin">
+            <p>게시판은 인스타랑 함께 기록용으로 사용됩니다</p>
+        </div>
+        <div class="list">
+            <img src="../static/image/color.png" alt="pin" class="schedule-pin">
+            <p>게시판은 인스타랑 함께 기록용으로 사용됩니다</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
