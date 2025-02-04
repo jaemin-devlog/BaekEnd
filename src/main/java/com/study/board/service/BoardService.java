@@ -42,7 +42,4 @@ public class BoardService {
     public void boardDelete(Integer id) {
         boardRepository.deleteById(id); // 해당 ID의 게시글 삭제
     }
-
-
-
 }
