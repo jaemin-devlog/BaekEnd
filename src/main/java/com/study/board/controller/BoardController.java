@@ -15,17 +15,7 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
-    @GetMapping("/home")
-    public ResponseEntity<String> homePage() {
-        return ResponseEntity.ok("환영합니다!"); // JSON 응답으로 메시지 반환
-    }
-
-    @GetMapping("/write")
-    public ResponseEntity<String> WriteForm() {
-        return ResponseEntity.ok("글 작성을 위한 폼을 제공합니다.");
-    }
-
-    @PostMapping("/writepro")
+    @PostMapping("/write")
     public ResponseEntity<String> WritePro(@RequestBody Board board) throws Exception {
         boardService.write(board);
         return ResponseEntity.ok("글 작성이 완료되었습니다.");
