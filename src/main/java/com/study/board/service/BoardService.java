@@ -22,12 +22,10 @@ public class BoardService {
         boardRepository.save(board); // 파일 관련 없이 제목과 내용만 저장
     }
 
-    // 게시글 리스트 조회
     public List<Board> boardList() {
         return boardRepository.findAll();
     }
 
-    // 게시글 상세 조회
     public Board boardView(Integer id) {
         Optional<Board> board = boardRepository.findById(id);
         return board.orElse(null); // 해당 ID의 게시글이 없으면 null 반환
