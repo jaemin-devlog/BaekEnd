@@ -14,28 +14,30 @@ import java.util.List;
 @RequestMapping("/board")
 public class BoardController {
 
-    @Autowired
-    private BoardService boardService;
+    private final BoardService boardService;
 
-    @PostMapping
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
+    @PostMapping("/write")
     public ResponseEntity<String> WritePro(@RequestBody Board board) throws Exception {
         boardService.write(board);
         return ResponseEntity.ok("글 작성이 완료되었습니다.");
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public ResponseEntity<List<Board>> List() {
         List<Board> boards = boardService.boardList();
-        return ResponseEntity.ok(boards); // JSON 형태로 리스트 반환
+        return ResponseEntity.ok(boards);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
         boardService.boardDelete(id);
         return ResponseEntity.ok("게시글이 삭제되었습니다.");
     }
 
-    @PatchMapping
+    @PatchMapping("/update")
     public ResponseEntity<String> Update(@RequestBody Board board) throws Exception {
         Board boardTemp = boardService.boardView(board.getId());
         if (boardTemp == null) {
